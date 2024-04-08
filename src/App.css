@@ -1,0 +1,520 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body,
+html {
+  font-family: "Arial", sans-serif;
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+  cursor: pointer;
+  width: 190px;
+}
+
+.navbar .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .nav-items a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navbar .nav-items a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0056b3;
+  transition: width 0.3s;
+}
+
+.navbar .nav-items a:hover:after {
+  width: 100%;
+}
+
+.navbar .nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.free-consultation-btn {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hero section styles */
+
+.footer {
+  margin-top: auto;
+  background-color: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+.apply-online-btn,
+.discover-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.apply-online-btn {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.discover-btn {
+  background-color: transparent;
+  color: #0056b3;
+  border: 2px solid #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  /* .hero-section {
+      flex-direction: column;
+    }
+  
+    .hero-section .hero-image img {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+    .service-cards {
+      flex-direction: column;
+    }
+  
+    .card {
+      flex-basis: 100%;
+    } */
+}
+
+/* App.css */
+
+/* Common styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  /* background-color: #333; */
+  color: white;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .nav-items {
+    margin-top: 20px;
+  }
+  .nav-items a {
+    margin: 10px 0;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+  .nav-items a {
+    font-size: 18px;
+  }
+}
+
+/* Common styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    /* background-color: #333; Adjust background color for smaller screens */
+  }
+  .nav-items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center;
+  }
+  .nav-items a {
+    margin: 10px 0;
+  }
+  .nav-actions {
+    margin-top: 20px;
+  }
+}
+
+/* Media query for tablets and desktops */
+@media (min-width: 769px) {
+  .nav-items a {
+    font-size: 18px;
+  }
+}
+
+/* Hamburger Menu - right aligned for small screens */
+.hamburger-menu {
+  display: none; /* Hidden by default, shown in media query below */
+  cursor: pointer;
+  z-index: 20; /* Ensure it's above other content */
+}
+
+.hamburger-menu div {
+  background-color: #333;
+  margin: 6px 0;
+  width: 30px;
+  height: 3px;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block; 
+  }
+
+  /* Adjust nav-items for mobile layout */
+  .nav-items,
+  .nav-actions {
+    display: none; 
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    flex-direction: column;
+    padding-top: 20px;
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+    z-index: 15;
+  }
+
+  .navbar.active .nav-items,
+  .navbar.active .nav-actions {
+    display: flex; 
+    transform: translateX(0);
+  }
+
+  .nav-items a,
+  .nav-actions button {
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .nav-items a:hover,
+  .nav-actions button:hover {
+    background-color: #f9f9f9;
+  }
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 4rem;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  color: #fff; 
+}
+
+.hero-text {
+  max-width: 600px; 
+  align-self: start;
+  margin-top: 10vh; 
+  color: #000;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700; /* Bold font weight */
+  line-height: 1.1; /* Tighter line height for a big heading */
+}
+
+.hero-text .eduplan {
+  font-size: 1.75rem;
+  color: blue; /* Gold color for the subheading */
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.5; /* Spacing between lines */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.apply-online-btn {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.apply-online-btn:hover {
+  background-color: #003d82;
+}
+
+.discover-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #0056b3;
+}
+
+.discover-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 2rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-top: 5vh;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text .eduplan {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+}
+.pagination {
+  position: absolute;
+  bottom: 0px;
+  left: 37.5%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  height: 5px;
+  width: 30px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 2px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active {
+  background-color: #333;
+  height: 5px; 
+}
+
+/* Hamburger Menu - right aligned for small screens */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 20;
+  margin-left: 300px;
+  top: 10;
+  position: absolute;
+  /* Ensure it's above other content */
+}
+
+.hamburger-menu div {
+  background-color: #333;
+  margin: 6px 0;
+  width: 30px;
+  height: 3px;
+  margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+  .navbar .logo {
+    margin-right: auto;
+  }
+
+  .navbar .logo img {
+    cursor: pointer;
+    width: 190px;
+  }
+  
+
+  /* Modal styles */
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-dialog {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+  }
+
+  .modal-header {
+    background-color: #0056b3;
+    color: white;
+    border-bottom: none;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .free-consultation-btn {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .free-consultation-btn:hover {
+    background-color: #003d82;
+  }
+
+  /* Optional: Customize button styles */
+  .submit-btn {
+    background-color: #4caf50;
+  }
+
+  .cancel-btn {
+    background-color: #f44336;
+  }
+
+  /* Optional: Adjust button size and margin */
+  .modal-footer .btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+  }
+}

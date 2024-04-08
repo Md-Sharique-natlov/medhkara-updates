@@ -1,0 +1,62 @@
+.Home {
+  font-weight: bold;
+  padding: 2rem;
+}
+.eduplan {
+  color: blue;
+}
+.hero-section {
+  /* display: flex; */
+  width: 75%;
+  float: left;
+  padding: 2rem;
+  border: 2px solid;
+  background-color: #f5f5f5;
+  opacity: 90%;
+  border-radius: 10px;
+}
+/* .hero-cards {
+  
+} */
+
+/* .hero-section .hero-text {
+  flex-basis: 75%; 
+} */
+
+.service-cards {
+  flex-basis: 25%; 
+  /* padding: 0rem 2rem; */
+  /* margin-top: 0rem; */
+  /* margin-bottom: 10px; */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-cards p {
+  padding: 0rem 1rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+.service-cards h2, h3 {
+  padding: 1rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack items vertically on small screens */
+    padding: 1rem; /* Reduce padding for smaller screens */
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .hero-section .hero-text {
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-bottom: 1rem; /* Add some space between hero text and service cards */
+  }
+
+  .service-cards {
+    flex-basis: 100%; /* Take full width on smaller screens */
+  }
+  
+}
